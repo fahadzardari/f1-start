@@ -1,0 +1,42 @@
+body{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+.lights{
+    display: flex;
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+}
+.strips{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    width:40%;
+    border-radius: 1em;
+    padding:1em;
+    height: 70%;
+    background-color: black;
+    margin: 3px;
+}
+.light{
+    height: 3em;
+    width: 3em;
+    margin:5px;
+    border-radius: 100%;
+    background-color: #2c2c2c; 
+}
+.on{
+    background-color: red;
+}
+.holding-board{
+    /* height: 2em;
+    margin: auto;
+    background-color: black;
+    width: 10em;
+    position: absolute; */
+}
