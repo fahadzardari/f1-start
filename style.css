@@ -9,6 +9,7 @@ body{
     position: relative;
     width: 100%;
     max-width: 500px;
+
 }
 .strips{
     display: flex;
@@ -33,10 +34,8 @@ body{
 .on{
     background-color: red;
 }
-.holding-board{
-    /* height: 2em;
-    margin: auto;
-    background-color: black;
-    width: 10em;
-    position: absolute; */
+
+.reaction-time{
+    font-size: 3em;
+    color:black;
 }
