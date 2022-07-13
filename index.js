@@ -4,16 +4,9 @@ sound.src = './assets/f1.mp3';
 let lightsOn = false;
 function clickBody() {
     if (!lightsOn){
-        sound.play();
-        lightsOn =true;
-        for (let i = 0; i < element.length; i += 2) {
-            startLights(i);
-        }
-    }
-    else{
-        lightsOn = false;
-        setTimeout(lightsOut() , 2000);
-        
+        lightsOn = true;
+        lightsOnProcedure(lightsOutProcedure);
+                    //lightsOutProcedure();
     }
 
 
@@ -27,8 +20,23 @@ function startLights(stripNo) {
 
     }, 500 * stripNo);
 }
+function lightsOnProcedure(lightsOutCallback){
+    lightsOn = true;
+    sound.play();
+    lightsOn =true;
+    for (let i = 0; i < element.length; i += 2) {
+        startLights(i);
+    }
+    lightsOutCallback();
+}
+function lightsOutProcedure(){
+    setTimeout(lightsOut ,5000 + Math.random() * 2000);
+
+}
 function lightsOut(){
     for(let i = 0 ; i < 10 ; i++){
         element[i].classList.toggle("on");
     }
+    lightsOn = false;
+
 }
