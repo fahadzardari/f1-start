@@ -1,7 +1,10 @@
 var element = document.getElementsByClassName("main-lights");
+var sound = new Audio();
+sound.src = './assets/f1.mp3';
 let lightsOn = false;
 function clickBody() {
     if (!lightsOn){
+        sound.play();
         lightsOn =true;
         for (let i = 0; i < element.length; i += 2) {
             startLights(i);
@@ -17,8 +20,7 @@ function clickBody() {
 }
 
 function startLights(stripNo) {
-    // if([0 , 2 , 4 , 6 ,8].notIncludes(stripNo) ){
-    // }
+ 
     setTimeout(() => {
         element[stripNo].classList.toggle("on");
         element[stripNo + 1].classList.toggle("on");
