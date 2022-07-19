@@ -6,10 +6,12 @@ let start = 0;
 let end = 0;
 let reactionTime = 0;
 let timerRunning = false;
+let bestTime;
 
-document.onkeyup(() => clickBody);
-
-function clickBody() {
+function clickBody(event , device) {
+    if(event.key != " " && device == "keyboard"){
+        exit;
+    }
     // alert(date.getTime());
     if (!lightsOn) {
         lightsOn = true;
@@ -21,10 +23,16 @@ function clickBody() {
         timerRunning = false;
         let date = new Date();
         end = date.getTime();
-        document.getElementById("reaction-time").innerText =  (end - start) / 1000;
+        reactionTime = (end - start) / 1000;
+        document.getElementById("best-time").innerText = "not Set";
+
+        bestTimeSet();
+        document.getElementById("reaction-time").innerText =  reactionTime;
+        
         //alert(end - start);
         } else {
             lightsOut();
+            //clearTimeout(timeOut);
             document.getElementById("reaction-time").innerText =  "Jump Start";
 
         }
@@ -67,4 +75,11 @@ function reactionTimerRunning() {
     let d = new Date();
     start = d.getTime();
     //alert('timer');
+}
+function bestTimeSet(){
+
+    if(reactionTime < bestTime){
+        bestTime = reactionTime;
+        document.getElementsByClassName("best-time").innerHTML = bestTime;
+    }
 }

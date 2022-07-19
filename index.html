@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
-<body onclick="clickBody()">
+<body onclick="clickBody(event , 'mouse')" onkeydown="clickBody(event , 'keyboard')">
     <h1 >F1 START SEQUENCE</h1>
     <div class="lights">
         <div class="holding-board "></div>
@@ -57,7 +57,7 @@
         
     </p>
 
-    <p>Best Time : <span class="best-time"></span></p>
+    <p>Best Time : <span id="best-time"></span></p>
     <script src="index.js"></script>
 </body>
 
