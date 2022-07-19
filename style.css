@@ -1,51 +1,67 @@
 @media screen and (max-width: 600px) {
-    .lights{
+    .lights {
+        display: block;
         background-color: red;
-        max-width:100px;
+        left: auto;
+        right: auto;
     }
+
+    .strips {}
+}
+html{
+    display: block;
 }
 
-
-body{
+body {
     display: flex;
     flex-flow: column;
     align-items: center;
-    justify-content: center;
+    justify-content: center
 }
-.lights{
-    display: flex;
-    position: relative;
-    width: 80%;
-    max-width: 520px;
 
-}
-.strips{
-    position: relative;
+.lights {
     display: flex;
-    flex-flow: column;
+    position: relative;
     align-items: center;
     justify-content: center;
-    flex: 1;
-    width:3rem;
+    width: 100%;
+    max-width: 420px;
+
+}
+
+.strips {
+    position: relative;
     border-radius: 1rem;
-    
-    padding: 0.25em 0.1rem 0.25rem 0.1rem ;
-    height: 70%;
     background-color: black;
-    margin: 3px;
+    margin: 0.2rem;
+    padding: 2px;
+    flex: 1;
+    
 }
-.light{
-    height: 2.5rem;
-    width: 2.5rem;
-    margin:0.5rem;
+
+.light {
+
+    padding-bottom: 100%;
+    /* height: 5rem;
+    width: 5rem; */
     border-radius: 100%;
-    background-color: #2c2c2c; 
+    margin: 0.4rem 0.2rem;
+    background-color: #2c2c2c;
 }
-.on{
+
+.on {
     background-color: red;
 }
-
-#reaction-time{
-    font-size: 3em;
-    color:black;
+.holding-board{
+    position: absolute;
+    left: 5px;
+    right: 5px;
+    top: 50%;
+    height: 4%;
+    background: #000;
+    transform: translateY(-50%);
+}
+#reaction-time {
+    font-size: 200%;
+    color: black;
 }

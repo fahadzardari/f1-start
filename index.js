@@ -4,9 +4,14 @@ let lightsOn = false;
 let timeOut;
 let start = 0;
 let end = 0;
-let reactionTime = 0;
+let reactionTime;
 let timerRunning = false;
 let bestTime;
+
+window.onload = () => {
+    // document.getElementById("best-time").innerText = localStorage.getItem("bestItem") ||"not Set";
+   //alert(window.localStorage.getItem("bestItem"));
+}
 
 function clickBody(event , device) {
     if(event.key != " " && device == "keyboard"){
@@ -24,9 +29,7 @@ function clickBody(event , device) {
         let date = new Date();
         end = date.getTime();
         reactionTime = (end - start) / 1000;
-        document.getElementById("best-time").innerText = "not Set";
-
-        bestTimeSet();
+        bestTimeSet(reactionTime);
         document.getElementById("reaction-time").innerText =  reactionTime;
         
         //alert(end - start);
@@ -76,10 +79,12 @@ function reactionTimerRunning() {
     start = d.getTime();
     //alert('timer');
 }
-function bestTimeSet(){
-
-    if(reactionTime < bestTime){
-        bestTime = reactionTime;
-        document.getElementsByClassName("best-time").innerHTML = bestTime;
+function bestTimeSet(r){
+    if(bestTime == "not set"){
+        document.getElementById("best-time").innerText = r;
+        window.localStorage.setItem("bestTime" , 123);
+    } else if(reactionTime < bestTime){
+        document.getElementById("best-time").innerText = r;
+        window.localStorage.setItem("bestTime" , 123);
     }
 }
