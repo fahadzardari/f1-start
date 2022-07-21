@@ -1,9 +1,6 @@
 @media screen and (max-width: 600px) {
     .lights {
-        display: block;
-        background-color: red;
-        left: auto;
-        right: auto;
+ 
     }
 
     .strips {}
@@ -11,12 +8,15 @@
 html{
     display: block;
 }
-
+html,body{
+    height: 100%;
+}
 body {
     display: flex;
     flex-flow: column;
     align-items: center;
-    justify-content: center
+    justify-content: center;
+ 
 }
 
 .lights {
